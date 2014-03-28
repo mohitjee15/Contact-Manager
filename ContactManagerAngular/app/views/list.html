@@ -1,0 +1,8 @@
+<h2>Contacts</h2>
+
+<input type="search" ng-model="search">
+<ul>
+    <li ng-repeat="contact in contacts | filter:search"><a href="#/contact/edit/{{contact.id}}">{{contact.name}} : {{contact.age}}</a></li>
+</ul>
+
+<a href="#contact/add" class="btn btn-primary">Add Contact</a>
