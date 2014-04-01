@@ -1,8 +1,30 @@
-<h2>Contacts</h2>
+<div class="well">
+    <h2>Contacts</h2>
 
-<input type="search" ng-model="search">
-<ul>
-    <li ng-repeat="contact in contacts | filter:search"><a href="#/contact/edit/{{contact.id}}">{{contact.name}} : {{contact.age}}</a></li>
-</ul>
+    <form class="form-inline search-form" role="form">
+        <div class="form-group">
+            <input class="form-control" type="search" placeholder="Search" ng-model="search">
+        </div>
+    </form>
 
-<a href="#contact/add" class="btn btn-primary">Add Contact</a>
+
+    <table class="table">
+        <th>#</th>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Phone</th>
+
+        <tr ng-repeat="contact in contacts | filter:search">
+            <td>{{contact.name}}</td>
+            <td>{{contact.age}}</td>
+            <td>{{contact.phone}}</td>
+            <td><a href="#/contact/edit/{{contact.id}}" class="btn btn-sm btn-primary">Edit</a></td>
+        </tr>
+
+    </table>
+
+
+    <div ng-include src="'views/standalone_widgets/hello_widget.html'"></div>
+
+    <a href="#contact/add" class="btn btn-success">Add Contact</a>
+</div>
