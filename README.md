@@ -6,10 +6,9 @@ Stack Used:
 AngularJS
 RequireJS
 cakePHP
+Bootstrap
 
-For package management and structuring of the App I have used:
-Yeoman + bower + grunt
-
+For package management and structuring of the App I have used: Yeoman + bower + grunt
 
 A basic application for managing contacts. 
 
