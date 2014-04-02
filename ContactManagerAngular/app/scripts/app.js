@@ -1,23 +1,22 @@
-'use strict';
+(function(define){
+    define([
+        'angular',
+        'angularRoute',
+        'angularResource',
+        'services/services',
+        'controllers/controllers_bootstrap'
+    ],
 
-angular
-    .module('angularYoTutDummyApp', ['ngRoute','ngResource'])
+        function(angular,angularRoute,angularResource,services,controllers){
+            console.log(services);
+            console.log(controllers);
+            var module  =   angular.module('ContactManager', ['ngRoute','ngResource','ContactManager.services','ContactManager.controllers']);
+            console.log(module);
+            return module;
+        }
+    );
 
-        .config(function($routeProvider){
 
-            $routeProvider
-                .when('/contact/edit/:index',{
-                    'templateUrl':  "/views/edit.html",
-                    'controller': 'Edit'
-                })
+})(define)
 
-                    .when('/',{
-                        'templateUrl':  "/views/list.html",
-                        'controller': 'MainCtrl'
-                    })
 
-                        .when('/contact/add',{
-                            'templateUrl':"/views/add.html",
-                            'controller':'Add'
-                        });
-});
